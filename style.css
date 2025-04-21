@@ -28,7 +28,7 @@ body {
 }
 
 .logo img {
-  width: 150px;
+  width: 350px;
   height: auto;
 }
 
@@ -152,8 +152,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  border: 2px solid #cbac70;
 }
 
 .social-icon:hover {
