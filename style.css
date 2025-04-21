@@ -135,19 +135,31 @@ p {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
+  gap: 30px;
   z-index: 100;
+  background: rgba(10, 25, 47, 0.8);
+  padding: 15px 30px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
 }
 
 .social-icon {
   color: #cbac70;
   font-size: 24px;
   transition: transform 0.3s ease, color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #cbac70;
 }
 
 .social-icon:hover {
   transform: translateY(-5px);
   color: #e0c688;
+  border-color: #e0c688;
 }
 
 @media (max-width: 768px) {
