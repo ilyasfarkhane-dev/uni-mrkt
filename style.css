@@ -129,6 +129,27 @@ p {
   }
 }
 
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.social-icon {
+  color: #cbac70;
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: #e0c688;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
