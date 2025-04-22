@@ -76,19 +76,34 @@ function updateCountdown() {
 
 function updateFlipCard(unit, value) {
   const card = document.querySelector(`[data-${unit}]`);
-  const currentValue = card.querySelector('.top').textContent;
   const newValue = String(value).padStart(2, '0');
 
-  if (currentValue !== newValue) {
-    card.querySelector('.top').textContent = newValue;
-    card.querySelector('.bottom').textContent = newValue;
-    card.querySelector('.top').classList.add('flip');
-    
-    setTimeout(() => {
-      card.querySelector('.top').classList.remove('flip');
-    }, 600);
-  }
+  // Determine the maximum based on the unit
+  const maxValue = {
+    seconds: 59,
+    minutes: 59,
+    hours: 23,
+    days: 999, // arbitrary large number
+  }[unit];
+
+  // Compute top value (less than bottom)
+  let topValue = value - 1;
+  if (topValue < 0) topValue = maxValue;
+  const topString = String(topValue).padStart(2, '0');
+
+  const topElement = card.querySelector('.top');
+  const bottomElement = card.querySelector('.bottom');
+
+  topElement.textContent = topString;
+  bottomElement.textContent = newValue;
+
+  // Optional: trigger flip animation
+  topElement.classList.add('flip');
+  setTimeout(() => {
+    topElement.classList.remove('flip');
+  }, 600);
 }
+
 
 // Update every second
 setInterval(updateCountdown, 1000);
